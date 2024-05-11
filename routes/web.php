@@ -3,6 +3,12 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+//Tugas Personal Project Layouting
+Route::get('/link', function(){
+    return view('link');
+});
+////Tugas Personal Project Layouting
+
 Route::get('/', function () {
     return view('welcome');
 });
