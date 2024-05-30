@@ -1,0 +1,30 @@
+created:
+    - app/Http/Controllers/LinkController.php
+    - app/Http/Controllers/ThemeController.php
+    - database/factories/LinkFactory.php
+    - database/factories/ThemeFactory.php
+    - database/factories/VisitFactory.php
+    - database/migrations/2024_05_19_043844_create_links_table.php
+    - database/migrations/2024_05_19_043845_create_themes_table.php
+    - database/migrations/2024_05_19_043846_create_visits_table.php
+    - app/Models/Link.php
+    - app/Models/Theme.php
+    - app/Models/Visit.php
+    - tests/Feature/Http/Controllers/LinkControllerTest.php
+    - tests/Feature/Http/Controllers/ThemeControllerTest.php
+    - app/Http/Requests/LinkStoreRequest.php
+    - app/Http/Requests/LinkUpdateRequest.php
+    - app/Http/Requests/ThemeUpdateRequest.php
+    - resources/views/link/index.blade.php
+    - resources/views/link/create.blade.php
+    - resources/views/link/show.blade.php
+    - resources/views/link/edit.blade.php
+    - resources/views/theme/index.blade.php
+    - resources/views/theme/edit.blade.php
+updated:
+    - routes/web.php
+models:
+    Link: { name: string, link: string, relationships: { hasMany: Visit, belongsTo: User } }
+    Theme: { name: string, color: string, text_color: string, button_rounded: string, button_bg: string, relationships: { belongsTo: User } }
+    Visit: { user_agent: text, relationships: { belongsTo: Link } }
+    User: { relationships: { hasMany: Link } }

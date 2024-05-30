@@ -18,6 +18,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
+        'bio',
         'email',
         'password',
     ];
@@ -44,4 +46,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function links()
+    {
+        return $this->hasMany(Link::class);
+    }
+
+    public function visits(){
+        return $this->hasManyThrough(Visit::class, Link::class);
+    }
+
 }

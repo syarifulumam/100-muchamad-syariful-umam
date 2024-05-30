@@ -1,0 +1,27 @@
+models:
+  Link:
+    name: string
+    link: string
+    relationships:
+      hasMany: Visit
+      belongsTo: User
+
+  Theme:
+    name: string
+    color: string
+    text_color: string
+    button_rounded: string
+    button_bg: string
+    relationships:
+      belongsTo: User
+
+  Visit:
+    user_agent: text
+    relationships:
+      belongsTo: Link
+
+controllers:
+  Link: 
+    resource
+  Theme:
+    resource: index, edit, update
